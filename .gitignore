@@ -16,3 +16,4 @@ venv/
 .idea/
 .vscode/
 *.swp
+\n# Generated files\nAGENT.md
