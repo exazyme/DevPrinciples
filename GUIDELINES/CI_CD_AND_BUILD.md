@@ -15,8 +15,10 @@ The CI pipeline is triggered at least on every pull request and every merge into
 A standard CI pipeline includes the following stages:
 
 1.  **Lint and Format Check / fix**: The pipeline first verifies that all code conforms to the project's style and quality standards. This is the fastest check and runs first to provide immediate feedback. All or at least all simple errors here are fixed automatically and without user intervention. Only more complex problems or when automated tools for the particular tech stack are missing should lead to user intervention.
-2.  **Unit & Integration Tests**: The test suite is executed to ensure the changes have not introduced any regressions and that new functionality is correct. This stage must be optimized for speed, using fast tools, parallelization and caching where possible. When possible, we use dependency inference to speed up tests, i.e. tools that analyze which tests are affected by changes to the source and run only those tests. Speed-increases can never compromise correctness.
-3.  **Build**: The pipeline compiles or packages the application into a production-ready artifact. It is optimized for speed using fast tools with dependency inference, parallelization and caching. If the build fails, the code is not considered deployable. Speed-increases can never compromise correctness.
+2.  **Security leak checks**: We check for security leaks and prevent a commit if they are found.
+See the CI section in SECURITY_GUIDELINES.md.
+3.  **Unit & Integration Tests**: The test suite is executed to ensure the changes have not introduced any regressions and that new functionality is correct. This stage must be optimized for speed, using fast tools, parallelization and caching where possible. When possible, we use dependency inference to speed up tests, i.e. tools that analyze which tests are affected by changes to the source and run only those tests. Speed-increases can never compromise correctness.
+4.  **Build**: The pipeline compiles or packages the application into a production-ready artifact. It is optimized for speed using fast tools with dependency inference, parallelization and caching. If the build fails, the code is not considered deployable. Speed-increases can never compromise correctness.
 
 ## 3. Continuous Deployment (CD)
 

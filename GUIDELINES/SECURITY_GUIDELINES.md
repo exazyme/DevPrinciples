@@ -38,7 +38,7 @@ The standard, platform-agnostic method for handling secrets is through **environ
 
 ## 4. Automated Prevention in CI/CD
 
-To enforce this policy automatically, we will integrate secret scanning into our CI pipeline.
+To enforce this policy automatically, integrate secret scanning into the  CI pipeline.
 
 -   **Secret Scanning**: The CI pipeline must include a step that scans for secrets in the codebase on every pull request. If a potential secret is detected, the build must fail, blocking the merge.
 -   **Recommended Tools**:
